@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Magnesia Parish Color Fun Run Registration</title>
+    <style>
+        /* --- CSS Reset & Base Styles --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            /* Light Green to Dark Green Gradient */
+            background: linear-gradient(135deg, #a8e063 0%, #56ab2f 50%, #1a472a 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+            overflow-x: hidden;
+        }
+
+        /* --- Main Container --- */
+        .landing-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 480px;
+            margin: 20px;
+            padding: 30px 25px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* --- Header Section --- */
+        header {
+            margin-bottom: 30px;
+        }
+
+        .event-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #56ab2f 0%, #1a472a 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(86, 171, 47, 0.4);
+        }
+
+        header h1 {
+            color: #1a1a2e;
+            font-size: clamp(1.75rem, 5vw, 2.25rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .event-details {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #555;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .detail-icon {
+            font-size: 1.1rem;
+        }
+
+        .description {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* --- Button Section --- */
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        /* --- Button Base Styles --- */
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px 24px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 16px;
+            transition: all 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            cursor: pointer;
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        /* Button 1: Registration (Primary) */
+        .btn-register {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            box-shadow: 0 6px 20px rgba(238, 90, 36, 0.35);
+        }
+
+        .btn-register:hover {
+            box-shadow: 0 8px 25px rgba(238, 90, 36, 0.45);
+            transform: translateY(-2px);
+        }
+
+        /* Button 2: Waiver (Secondary) */
+        .btn-waiver {
+            background: white;
+            color: #2d3436;
+            border: 2px solid #dfe6e9;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-waiver:hover {
+            border-color: #b2bec3;
+            background: #f8f9fa;
+        }
+
+        .btn-icon {
+            font-size: 1.3rem;
+        }
+
+        /* --- Important Notice --- */
+        .notice {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            color: #856404;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .notice strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        footer p {
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .social-link:hover {
+            background: #e0e0e0;
+            transform: translateY(-2px);
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- Desktop/Tablet Enhancements --- */
+        @media (min-width: 600px) {
+            .landing-container {
+                max-width: 550px;
+                padding: 50px 40px;
+            }
+
+            .action-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .btn {
+                width: auto;
+                min-width: 200px;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* --- Dark Mode Support --- */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: linear-gradient(135deg, #1a472a 0%, #0d2818 100%);
+            }
+
+            .landing-container {
+                background-color: rgba(30, 30, 50, 0.95);
+            }
+
+            header h1 {
+                color: #fff;
+            }
+
+            .description {
+                color: #bbb;
+            }
+
+            .detail-item {
+                color: #ccc;
+            }
+
+            .btn-waiver {
+                background: #2a2a3e;
+                border-color: #444;
+                color: #fff;
+            }
+
+            .btn-waiver:hover {
+                background: #3a3a4e;
+            }
+
+            footer {
+                border-top-color: #333;
+            }
+
+            footer p {
+                color: #777;
+            }
+
+            .social-link {
+                background: #333;
+                color: #bbb;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="landing-container">
+        <header>
+            <span class="event-badge">Magnesia Parish</span>
+            <h1>🎨 Color Fun Run 2026</h1>
+            
+            <div class="event-details">
+                <div class="detail-item">
+                    <span class="detail-icon">📅</span>
+                    <span>May 09, 2026</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">⏰</span>
+                    <span>4:00 AM</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">📍</span>
+                    <span>Magnesia Del Norte Plaza</span>
+                </div>
+            </div>
+
+            <p class="description">
+                Get ready to run, walk, and splash your way through a vibrant 7K! 
+                Join us for a day of fitness, fun, and colorful memories.
+            </p>
+        </header>
+
+        <div class="notice">
+            <strong>⚠️ Important:</strong>
+            Please download the waiver, sign it, and bring it with you on event day.
+        </div>
+
+        <div class="action-buttons">
+            <!-- BUTTON 1: GOOGLE FORM LINK -->
+            <a href="https://forms.gle/NVYpVGW3TxscQ5tz9" target="_blank" class="btn btn-register">
+                <span class="btn-icon">📝</span>
+                Register Now
+            </a>
+
+            <!-- BUTTON 2: PDF WAIVER LINK -->
+            <a href="https://docs.google.com/document/d/13-2EVfyD6e140Df4hMjIDqK29wefk1MpKuXmrMoPlRM/export?format=pdf" target="_blank" class="btn btn-waiver">
+                <span class="btn-icon">📄</span>
+                Download Waiver
+            </a>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Magnesia Parish. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">📧</a>
+                <a href="#" class="social-link">📱</a>
+                <a href="#" class="social-link">📘</a>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
